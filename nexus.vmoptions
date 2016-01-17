@@ -1,0 +1,14 @@
+-Xms256M
+-Xmx768M
+-XX:+UnlockDiagnosticVMOptions
+-XX:+UnsyncloadClass
+-Djava.net.preferIPv4Stack=true
+-Dkaraf.home=.
+-Dkaraf.base=.
+-Dkaraf.etc=etc
+-Djava.util.logging.config.file=etc/java.util.logging.properties
+-Dkaraf.data=/sonatype-work/data
+-Dkaraf.instances=/sonatype-work/instances
+-Djava.io.tmpdir=/sonatype-work/tmp
+-Dkaraf.startLocalConsole=false
+
