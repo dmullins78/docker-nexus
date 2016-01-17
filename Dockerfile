@@ -7,16 +7,16 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 RUN mkdir -p /opt/sonatype/nexus \
       && curl -SL https://sonatype-download.global.ssl.fastly.net/nexus/oss/nexus-${NEXUS_VERSION}-bundle.tar.gz \
-      | tar -xzC /opt/sonatype/nexus 
+      | tar -xzC /opt/sonatype
 
 RUN useradd -r -u 200 -m -c "nexus role account" -d ${SONATYPE_WORK} -s /bin/false nexus
 
-RUN chown nexus:nexus -R /opt/sonatype/nexus
+RUN chown nexus:nexus -R /opt/sonatype
 
 VOLUME ${SONATYPE_WORK}
 
 EXPOSE 8081
-WORKDIR /opt/sonatype/nexus/nexus-${NEXUS_VERSION}
+WORKDIR /opt/sonatype/nexus-${NEXUS_VERSION}
 USER nexus
 
 CMD bin/nexus 
