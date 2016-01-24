@@ -1,0 +1,5 @@
+sudo mkdir -p /etc/docker/certs.d/192.168.99.100:8043/
+
+sudo cp selfsigned.crt /etc/docker/certs.d/192.168.99.100:8043/ca.crt
+
+sudo /etc/init.d/docker restart

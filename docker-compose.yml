@@ -1,0 +1,22 @@
+nginx:  
+  build: ./nginx
+  ports:
+   - "8080:80"
+   - "8043:443"
+  links:
+    - registry:registry
+data:  
+  build: ./data
+  volumes:
+    - /sonatype-work
+registry:
+  build: ./server
+  ports:
+    - 127.0.0.1:8081:8081
+  ports:
+   - "8081:8081"
+   - "9080:9080"
+   - "9410:9410"
+  volumes_from:
+   - data
+
